@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+   
+    <!-- Estilos principales -->
+    <link rel="stylesheet" href="css/estilos-globales.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+    <title>TITULO A ELEGIR</title>
+
+</head>
+<body>
+    
+
+    <!-- NAV BAR EMPIEZA -->
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top">
+
+        <div class="container">
+
+            <a class="navbar-brand" href="#">TITULO PRUEBA</a>
+            <button onmouseover="over()" onmouseout="out(this)" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars hamburguesa" id="hamburguesa"></i>
+                <script>
+                    /* ESTILOS OVER Y OUT DEL ICONO ham-icon */
+                    function over() {
+                        var icon = document.getElementById('hamburguesa');
+                        icon.style.color = "#000";
+                    }
+                    function out() {
+                        var icon = document.getElementById('hamburguesa');
+                        icon.style.color = "#FFF";
+                    }
+                </script>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-lg-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contacto</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Cursos
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#"><i class="fab fa-java"></i>  Java</a>
+                            <a class="dropdown-item" href="#"><i class="fab fa-java"></i>  Java Fx</a>
+                            <a class="dropdown-item" href="#">Maven</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        
+    </nav>
+    
+    <!-- NAV BAR TERMINA -->
+
+
+    <!-- HEADER EMPIEZA -->
+    
+    <header class="imagenMain">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12 text-center">
+                    <h1 class="font-weight-light">APRENDE JAVA</h1>
+                    <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum temporibus eligendi quos, itaque distinctio delectus cumque rem repudiandae doloremque fugiat repellendus quisquam ab explicabo aperiam laboriosam excepturi eius quae voluptatum!</p>
+                    <button type="button" class="btn btn-dark btn-lg btnCursos">
+                        Ver cursos
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- HEADER TERMINA -->
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+</body>
+</html>

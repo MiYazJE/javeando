@@ -1,0 +1,75 @@
+/*              ESTILOS MAIN      (author -> Rubén Saiz Serrano)      */
+
+body {
+    padding: 0;
+    margin: 0;
+    /* font-family: "Montserrat"; */
+}
+
+/* NAV BAR */
+
+.navbar {
+    background-color: #000 !important;
+}
+
+.navbar .navbar-brand {
+    color: #FFF !important;
+}
+
+.navbar .navbar-nav li a.nav-link {
+    color: #FFF !important;
+}
+
+.navbar .navbar-nav li a.nav-link:selected {
+    color: #FFF !important;
+}
+
+a.dropdown-item:hover {
+    background-color: #000;
+    color: #FFF;
+}
+
+.navbar-toggler {
+    background-color: #FFF !important;
+}
+
+.navbar-light .navbar-toggler {
+    border: none;
+    background-color: #000 !important;
+    border: 2px solid #FFF;
+    border-radius: 0;
+}
+
+.hamburguesa {
+    color: white;
+    width: 100% !important;
+}
+
+.navbar-toggler:hover {
+    background-color: #FFF !important;
+}
+
+/* HEADER */
+
+.imagenMain {
+    height: 100vh;
+    min-height: 500px;
+    background-image: url('../imgs/header3.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
