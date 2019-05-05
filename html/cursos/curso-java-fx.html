@@ -9,12 +9,15 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
    
     <!-- Estilos principales -->
-    <link rel="stylesheet" href="css/estilos-globales.css">
+    <link rel="stylesheet" href="../../css/estilos-globales.css">
+
+    <!-- Estilos pagina cursos -->
+    <link rel="stylesheet" href="../../css/estilos-cursos.css"> 
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
-    <title>JAVEANDO</title>
+    <title>Curso Java Fx</title>
 
 </head>
 <body>
@@ -26,7 +29,7 @@
 
         <div class="container">
 
-            <a class="navbar-brand" href="index.html">JAVEANDO</a>
+            <a class="navbar-brand" href="../../index.html">JAVEANDO</a>
             <button onmouseover="over()" onmouseout="out(this)" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fas fa-bars hamburguesa" id="hamburguesa"></i>
                 <script>
@@ -45,7 +48,7 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-lg-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="index.html">Inicio <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="../../index.html">Inicio <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="modal" href="#contact">Contacto</a>
@@ -55,9 +58,9 @@
                             Cursos
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="/html/cursos/curso-java.html"><i class="fab fa-java"></i>  Java</a>
-                            <a class="dropdown-item" href="/html/cursos/curso-java-fx.html"><i class="fab fa-java"></i>  Java Fx</a>
-                            <a class="dropdown-item" href="/html/cursos/curso-maven.html">Maven</a>
+                            <a class="dropdown-item" href="curso-java.html"><i class="fab fa-java"></i>  Java</a>
+                            <a class="dropdown-item" href="curso-java-fx.html"><i class="fab fa-java"></i>  Java Fx</a>
+                            <a class="dropdown-item" href="curso-maven.html">Maven</a>
                         </div>
                     </li>
                 </ul>
@@ -76,67 +79,13 @@
         <div class="container h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-12 text-center">
-                    <h1 class="font-weight-light">APRENDE JAVA</h1>
-                    <p class="lead">
-                        Si no conoces Java no se a que estas esperando!
-                    </p>
-                    <a href="#cursos" class="btn btn-outline-dark btn-lg link-button" role="button">
-                        Ver cursos
-                    </a>
+                    <h1 class="font-weight-light">Curso de Java Fx</h1>
                 </div>
             </div>
         </div>
     </header>
 
     <!-- HEADER TERMINA -->
-
-
-    <!-- CONTENT EMPIEZA -->
-
-    <div class="card-group" id="cursos">
-        <div class="card">
-          <img class="card-img-top" src="imgs/java.png" alt="Curso de Java Se">
-          <div class="card-body body-curso">
-            <h5 class="card-title">JAVA SE</h5>
-            <p class="card-text">
-                En este curso aprenderás a crear aplicaciones Java de proposito general, 
-                se adquirirán los conocimientos básicos para desarrollar ejercicios de ámbito general.
-            </p>
-            <a href="html/cursos/curso-java.html" class="btn btn-outline-dark btn-lg link-button" role="button">
-                Ir al curso de Java Se
-            </a>
-          </div>
-        </div>
-        <div class="card">
-          <img class="card-img-top" src="imgs/javaFx.jpg" alt="Curso de Java Fx">
-          <div class="card-body body-curso">
-            <h5 class="card-title">JAVA FX</h5>
-            <p class="card-text">
-                Aquí se aprenderá a instalar y a trabajar con las librerías de java fx para desarrollar
-                aplicacines de escritorio modernas.
-            </p>
-            <a href="html/cursos/curso-java-fx.html" class="btn btn-outline-dark btn-lg link-button" role="button">
-                Ir al curso de Java Fx
-            </a>
-          </div>
-        </div>
-        <div class="card">
-          <img class="card-img-top" src="imgs/maven.jpg" alt="Curso de maven">
-          <div class="card-body body-curso">
-            <h5 class="card-title">MAVEN</h5>
-            <p class="card-text">
-                Maven esta a la orden del día en el desarrollo de Java, ya que te proporciona el manejo de las
-                dependencias de un proyecto de una manera muy fácil. También te permite compilar y empaquetar 
-                un proyecto.
-            </p>
-            <a href="html/cursos/curso-maven.html" class="btn btn-outline-dark btn-lg link-button" role="button">
-                Ir al curso de MAVEN
-            </a>
-          </div>
-        </div>
-    </div>
-
-    <!-- CONTENT TERMINA -->
 
 
     <!-- FOOTER EMPIEZA -->

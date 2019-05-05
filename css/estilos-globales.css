@@ -1,5 +1,9 @@
 /*              ESTILOS MAIN      (author -> Rubén Saiz Serrano)      */
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     padding: 0;
     margin: 0;
@@ -60,16 +64,39 @@ a.dropdown-item:hover {
     background-repeat: no-repeat;
 }
 
+.link-button:hover {
+    color: #FFF !important;
+}
 
 
+/* CONTENT */
+
+ #cursos {
+     margin: 50px 0px 50px 0px;
+ }
+
+.body-curso {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
 
 
+/* FOOTER */
 
+footer {
+    background-color: rgb(52, 54, 54);
+    color: #FFF;
+}
 
+.footer-icons {
+    color: #FFF;
+}
 
+.footer-icons:hover {
+    color: darkgray;
+}
 
-
-
-
-
-
+.footer-copyright {
+    background-color: rgb(42, 44, 44);
+}
