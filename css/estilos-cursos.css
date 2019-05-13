@@ -5,3 +5,27 @@
 .imagenMain {
     height: 100px;
 }
+
+
+/* CONTENT */
+
+/* Margen al contenedor del contenido */
+.post-content-section {
+    margin-top: 80px;
+    font-size: 20px;
+}
+
+/* pasa-paginas */
+.pagination {
+    justify-content: center;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+.titulo-bienvenida {
+    border-color: black;
+    border: solid 1px;
+    border-left: none;
+    border-right: none;
+    margin-bottom: 20px;
+}
