@@ -108,26 +108,140 @@
                     del proyecto maven</h1>
 
                     <p>
-                        
+                        Todo proyecto Maven necesita la configuración de el fichero pom.xml, que es donde se definen todas las propiedades (dependencias, pluggins, encoding…)
+                        <br />Este podria ser el fichero pom de cualquier proyecto:
                     </p>
 
-
+                    <pre>
+                        <code class="language-markup">
+&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+  xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;
+  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+ 
+  &lt;groupId&gt;com.javeando.app&lt;/groupId&gt;
+  &lt;artifactId&gt;my-app&lt;/artifactId&gt;
+  &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;
+ 
+  &lt;properties&gt;
+    &lt;maven.compiler.source&gt;1.7&lt;/maven.compiler.source&gt;
+    &lt;maven.compiler.target&gt;1.7&lt;/maven.compiler.target&gt;
+  &lt;/properties&gt;
+ 
+  &lt;dependencies&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;junit&lt;/groupId&gt;
+      &lt;artifactId&gt;junit&lt;/artifactId&gt;
+      &lt;version&gt;4.12&lt;/version&gt;
+      &lt;scope&gt;test&lt;/scope&gt;
+    &lt;/dependency&gt;
+  &lt;/dependencies&gt;
+&lt;/project&gt;
+                        </code>
+                    </pre>
                     
+                    <h1 class="font-weight-light h3">Qué acabamos de hacer?</h1>
+                    <p>
+                        Hemos definido en las propiedades del proyecto que compile bajo la versión 
+                        1.7 de java y también hemos añadido la herramienta de Jboss para realizar pruebas unitarias.
+                    </p>
+
+                    <p>
+                        <h1 class="font-weight-light h3">Construir el proyecto</h1>
+                        Las opciones que nos da Maven despues de haber creado un arquetipo son:
+                        <ul>
+                            <li>mvn compile - compila el proyecto y deja el resultado en target/classes</li>
+                            <li>mvn test – compila los test y los ejecuta</li>
+                            <li>mvn package – empaqueta el proyecto y lo dejará en taget/autentiaNegocio-1.0-SNAPSHOT.jar</li>
+                            <li>mvn install – guarda el proyecto en el repositorio</li>
+                            <li>mvn clean – borra el directorio de salida (target)</li>
+                        </ul>
+                        Estas tareas son siempre las mismas así que cuando un desarrollador salte de un proyecto a otro siempre sabrá hacer estas cosas.
+                    </p>
+
+                    <p>
+                        Maven define un ciclo de vida por lo que al ejecutar un objetivo, antes se ejecutan los sus antecesores en el ciclo de vida. Por ejemplo, si ejecutamos package, antes se ejecutará compile y test. 
+                    </p>
+
+                    <img src="../../../imgs/cicle-lyfe.png">
+    
+                    <p>Para saber mas sobre esto dejo un <a href="http://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html">link</a>.</p>
+
+                    <p>
+                        Vamos a realizar la etapa de package que es la que en el ciclo de la vida englobaria a todas las anteriores.
+                    </p>
+
+                    <pre class="command-line" data-prompt="PS C:\Users\Ruben\Maven>"><code class="language-powershell">mvn package</code></pre>
+
+                    <p>
+                        La consola mostrara lo siguiente:
+                    </p>
+
+                    <pre class="command-line" data-output="2-1100" data-prompt="PS C:\Users\Ruben\Maven>"><code class="language-powershell">[INFO] Building jar: /home/anonymous/Escritorio/Maven/my-app/target/my-app-1.0-SNAPSHOT.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  6.840 s
+[INFO] Finished at: 2019-05-14T22:55:31+02:00
+[INFO] ------------------------------------------------------------------------
+</code></pre>
+                    
+                    <p>
+                        Con esto ya se habra empaquetado el proyecto maven con todas las clases compiladas e incluso con un archivo jar
+                    </p>
+
+                    <pre class="command-line" data-output="2-1100" data-prompt="PS C:\Users\Ruben\Maven>"><code class="language-shell"> tree
+target/
+├── classes
+│   └── com
+│       └── mycompany
+│           └── app
+│               └── App.class
+├── generated-sources
+│   └── annotations
+├── generated-test-sources
+│   └── test-annotations
+├── maven-archiver
+│   └── pom.properties
+├── maven-status
+│   └── maven-compiler-plugin
+│       ├── compile
+│       │   └── default-compile
+│       │       ├── createdFiles.lst
+│       │       └── inputFiles.lst
+│       └── testCompile
+│           └── default-testCompile
+│               ├── createdFiles.lst
+│               └── inputFiles.lst
+├── my-app-1.0-SNAPSHOT.jar
+├── surefire-reports
+│   ├── com.mycompany.app.AppTest.txt
+│   └── TEST-com.mycompany.app.AppTest.xml
+└── test-classes
+    └── com
+        └── mycompany
+            └── app
+                └── AppTest.class
+
+20 directories, 10 files
+</code></pre>
+
 
                     <nav aria-label="...">
                         <ul class="pagination">
                             <li class="page-item">
-                                <a class="page-link" href="curso-maven-cñase1.html">Atrás</a>
+                                <a class="page-link" href="curso-maven-clase1.html">Atrás</a>
                             </li>
                             <li class="page-item">
                                 <a class="page-link" href="../curso-maven.html">1</a>
                             </li>
-                            <li class="page-item active">
+                            <li class="page-item">
                                 <a class="page-link" href="curso-maven-clase1.html">2</a>
                             </li>
-                            <li class="page-item"><a class="page-link" href="curso-maven-clase2.html">3</a></li>
-                            <li class="page-item disable">
-                            <a class="page-link" href="curso-maven-clase2.html">Siguiente</a>
+                            <li class="page-item active">
+                                <a class="page-link" href="curso-maven-clase2.html">3</a>
+                            </li>
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#">Siguiente</a>
                             </li>
                         </ul>
                     </nav>
