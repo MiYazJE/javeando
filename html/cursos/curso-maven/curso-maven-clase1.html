@@ -104,7 +104,7 @@
 
             <div class="row">
                 <div class="col-lg-9 col-md-9 col-sm-12">
-                    <h1 class="font-weight-light text-center titulo-bienvenida">Creacion de un proyecto Maven</h1>
+                    <h1 class="font-weight-light text-center titulo-bienvenida">Creación de un proyecto Maven</h1>
 
                     <h1 class="font-weight-light h2">Que es un arquetipo?</h1>
                     <p>
@@ -112,24 +112,38 @@
                         Creación de un proyecto maven:
                     </p>
 
-                    <pre class="command-line language-bash" data-user="Ruben>">
-                        <code>
-mvn archetype:create -DgroupId=com.javeando.demoapp -DartifactId=proyectoMaven 
-                        </code>
-                    </pre>
-
+                    <pre class="command-line" data-prompt="PS C:\Users\Ruben\Maven>" data-output="2-1100"><code class="language-powershell">mvn archetype:create -DgroupId=com.javeando.demoapp -DartifactId=proyectoMaven</code></pre>
+   
                     <p>
-                      Donde groupId es el identificador único de la organización o grupo que crea el proyecto (se podría decir que es el identificador de la aplicación), y artifactId es el identificador único del artefacto principal de este proyecto (se podría decir que es el identificador del módulo
-                      dentro de la aplicación), es decir, este será el nombre del jar.
+                        Donde groupId es el identificador único de la organización o grupo que crea el proyecto (se podría decir que es el identificador de la aplicación), y artifactId es el identificador único del artefacto principal de este proyecto (se podría decir que es el identificador del módulo
+                        dentro de la aplicación), es decir, este será el nombre del jar.
                     </p>
-
+                    
                     <p>
                         En el comando no ha hecho falta decir que queremos construir un proyecto java, ya que esta es la opción por defecto.
                         El resultado de ejecutar este comando es la siguiente estructura de directorios y ficheros:
                     </p>
-
-
                     
+                    <pre class="command-line" data-prompt="PS C:\Users\Ruben\Maven>" data-output="2-1100"><code class="language-powershell">tree
+C:.
+└───proyectoMaven
+    └───src
+        ├───main
+        │   └───java
+        │       └───com
+        │           └───javeando
+        │               └───demoapp
+        └───test
+            └───java
+                └───com
+                    └───javeando
+                        └───demoapp
+                    </code></pre>
+                    
+                    <p>
+                            Esta estructura de directorios es estándar, siendo la misma en todos los proyectos. Maven nos permite cambiar esta estructura, pero no sería recomendable ya que el hecho de que sea estándar permite a los desarrolladores moverse entre proyectos con mayor comodidad, ya que siempre sabrán donde encontrar las cosas. Para más información sobre la estructura de directorios se puede consultar <a href="http://maven.apache.org/guides/introduction/introduction-to-the-standard-directory-layout.html">este link.</a> 
+                    </p>
+
                     <nav aria-label="...">
                         <ul class="pagination">
                             <li class="page-item">
