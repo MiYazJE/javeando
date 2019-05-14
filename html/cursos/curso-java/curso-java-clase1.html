@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <!-- favicon -->
-    <link rel="icon" type="image/png" href="../../imgs/java-icon.ico">
+    <link rel="icon" type="image/png" href="../../../imgs/java-icon.ico">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -15,12 +15,18 @@
     <link rel="stylesheet" href="../../../css/estilos-globales.css">
     
     <!-- Estilos pagina cursos -->
-    <link rel="stylesheet" href="../../css/estilos-cursos.css">
+    <link rel="stylesheet" href="../../../css/estilos-cursos.css">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-
-    <title>Curso Java</title>
+    
+    <!-- CSS prism -->
+    <link rel="stylesheet" href="../../../css/prism.css">
+    
+    <!-- JS prism -->
+    <script src="../../../js/prism.js"></script>
+    
+    <title>Curso Java SE</title>
 
 </head>
 <body>
@@ -98,47 +104,82 @@
 
             <div class="row">
                 <div class="col-lg-9 col-md-9 col-sm-12">
-                    <h1 class="font-weight-light text-center titulo-bienvenida">Bienvenido al curso de Java</h1>
+                    <h1 class="font-weight-light text-center titulo-bienvenida">Primeros Pasos</h1>
+
+                    <p>En esta clase entenderemos el funcionamiento de una programa básico en Java, para ello necesitamos entender que es una clase.</p>
                     <p>
-                        Hola amigo si estas aquí supongo que es porque quieres aprender Java o porque estas obligado a ver mi exposición durante 10 minutos jeje. Sea como sea en este curso aprenderemos conceptos básicos ya que soy programador fp.
-                        <br /><br />Java es un lenguaje 100% orientado da objetos de alto nivel pero no os preocupéis no os voy a explicar lo que son objetos. Aquí vamos al grano, solo realizaremos conceptos muy basicos de como hacer un programa por consola. 
-                        Que vamos a aprender en este curso:
-                    </p>
-                    <ul>
-                        <li>Realizar un holaMundo.java</li>
-                        <li>Estructuras de control, comúnmente llamados condiconales.</li>
-                        <li>Bucles o sentencias repetitivas: for, while, do-while.</li>
-                    </ul>
-                    <p>
-                        Requisitos del curso:
-                        <ul>
-                            <li>Conseguir un  entorno de desarrollo: bloc de notas, notepad++, papel o incluso <span class="badge badge-danger">Eclipse!</span></li>
-                            <li>Saber leer y escribir.</li>
-                            <li>Mentalizarte de que <span class="badge badge-danger">eclipse</span> puede que no compile!!!</li>
-                        </ul>
+                        Una clase no es mas que el encapsulamiento de un programa, por ejemplo de un hola mundo.
+                        Para ejecutar un hola mundo en java deberemos crear una clase y crear una función main con un array de tipo String de argumentos que contendra los parámetros enviados por línea de comandos.
+                        <br />La estructura sería la siguiente: 
                     </p>
 
-                    <p>Ya casi estamos listos para empezar el curso, qué nos falta te estarás preguntando. Necesitamos ver un video de un auténtico programador de FP para empezar con una buena motivación.</p>
+                    <pre>
+                        <code class="language-java">
+/* Estructura basica de un programa en Java */
 
-                    <div class="embed-responsive embed-responsive-16by9">
-                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/OgIRAjnnJzI" allowfullscreen></iframe>
-                    </div>
+public class holaMundo {
+    
+    public static void main(String[] args) {
+        System.out.println( "Hola Mundo" );
+    }
+
+}
+                        </code>
+                    </pre>
+
+                    <p>
+                        <br>
+                        <h1 class="font-weight-light h4">Qué significa el array pasado como argumento en la método main?</h1>
+                        Son argumentos que obligatoriamente cualquier método main en un programa Java debe contener.
+                        Los programas en java se pueden ejecutar en la cosola y permiten el paso de parametros de la siguiente forma.
+                        <br />Si en la linea de comandos ejecutamos el siguiente de programa con "java leerArgumentos 1 2 3 4 5":
+                    </p>
+
+                    <pre>
+                        <code class="language-java">
+/* Programa que imprime los parametros pasados por consola */
+
+public class leerArgumentos {
+
+    public static void main(String[] args) {
+
+        System.out.println("Imprimiedo argumentos por consola");
+        for (String n : args) {
+            System.out.println( n );
+        }
+
+    }
+
+}
+                        </code>
+                    </pre>
+
+                    <p>La salida del programa sera el siguiente:</p>
+                    <pre>
+                        <code class="language-info">
+Imprimiedo argumentos por consola
+1
+2
+3
+4
+5
+                        </code>
+                    </pre>
 
                     <nav aria-label="...">
                         <ul class="pagination">
-                            <li class="page-item disabled">
-                                <span class="page-link">Previous</span>
+                            <li class="page-item">
+                                <a class="page-link" href="../curso-java.html">Atrás</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="../curso-java.html">1</a>
                             </li>
                             <li class="page-item active">
-                                <a class="page-link" href="curso-java.html">1</a>
-                                <span class="sr-only">(current)</span>
+                                <a class="page-link" href="curso-java-clase1.html">2</a>
                             </li>
+                            <li class="page-item"><a class="page-link" href="curso-java-clase2.html">3</a></li>
                             <li class="page-item">
-                                <a class="page-link" href="curso-java/curso-java-clase1.html">2</a>
-                            </li>
-                            <li class="page-item"><a class="page-link" href="curso-java/curso-java-clase2.html">3</a></li>
-                            <li class="page-item">
-                            <a class="page-link" href="curso-java/curso-java-clase1.html">Next</a>
+                            <a class="page-link" href="curso-java-clase2.html">Siguiente</a>
                             </li>
                         </ul>
                     </nav>

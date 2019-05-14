@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <!-- favicon -->
-    <link rel="icon" type="image/png" href="../../imgs/java-icon.ico">
+    <link rel="icon" type="image/png" href="../../../imgs/java-icon.ico">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -15,12 +15,18 @@
     <link rel="stylesheet" href="../../../css/estilos-globales.css">
     
     <!-- Estilos pagina cursos -->
-    <link rel="stylesheet" href="../../css/estilos-cursos.css">
+    <link rel="stylesheet" href="../../../css/estilos-cursos.css">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-
-    <title>Curso Java</title>
+    
+    <!-- CSS prism -->
+    <link rel="stylesheet" href="../../../css/prism.css">
+    
+    <!-- JS prism -->
+    <script src="../../../js/prism.js"></script>
+    
+    <title>Curso Java SE</title>
 
 </head>
 <body>
@@ -98,47 +104,159 @@
 
             <div class="row">
                 <div class="col-lg-9 col-md-9 col-sm-12">
-                    <h1 class="font-weight-light text-center titulo-bienvenida">Bienvenido al curso de Java</h1>
+                    <h1 class="font-weight-light text-center titulo-bienvenida">Variables, estructuras de datos y recorridos</h1>
+
                     <p>
-                        Hola amigo si estas aquí supongo que es porque quieres aprender Java o porque estas obligado a ver mi exposición durante 10 minutos jeje. Sea como sea en este curso aprenderemos conceptos básicos ya que soy programador fp.
-                        <br /><br />Java es un lenguaje 100% orientado da objetos de alto nivel pero no os preocupéis no os voy a explicar lo que son objetos. Aquí vamos al grano, solo realizaremos conceptos muy basicos de como hacer un programa por consola. 
-                        Que vamos a aprender en este curso:
+                        En esta clase veremos los diferentes tipo de datos que hay y como recorrer estructuras de datos como arrays o vectores con bucles de repetición como for, while o do-while.
+                        <h1 class="font-weight-light h4">Qué es una variable?</h1>
+                        Las variables en Java son un espacio de memoria en el guardamos un determinado valor, ejemplo de definición de una variable:
                     </p>
-                    <ul>
-                        <li>Realizar un holaMundo.java</li>
-                        <li>Estructuras de control, comúnmente llamados condiconales.</li>
-                        <li>Bucles o sentencias repetitivas: for, while, do-while.</li>
-                    </ul>
+
+                    <pre>
+                        <code class="language-info">
+tipo_variable identificador;
+                        </code>
+                    </pre>
+
                     <p>
-                        Requisitos del curso:
+                        Java tiene los siguientes tipo de dato primitivos:
                         <ul>
-                            <li>Conseguir un  entorno de desarrollo: bloc de notas, notepad++, papel o incluso <span class="badge badge-danger">Eclipse!</span></li>
-                            <li>Saber leer y escribir.</li>
-                            <li>Mentalizarte de que <span class="badge badge-danger">eclipse</span> puede que no compile!!!</li>
+                            <li>byte</li>
+                            <li>short</li>
+                            <li>int</li>
+                            <li>char</li>
+                            <li>long</li>
+                            <li>boolean</li>
+                            <li>double</li>
+                            <li>float</li>
                         </ul>
+                        Existen otros que son llamados tipo envoltorio o wrapper que son igual que estos pero tienen sus propios métodos.
+                        Estos son:
+                        <ul>
+                            <li>Integer</li>
+                            <li>Boolean</li>
+                            <li>Long</li>
+                            <li>Floar</li>
+                            <li>Double</li>
+                            <li>Short</li>
+                            <li>Character</li>
+                            <li>Byte</li>
+                        </ul> 
+                        Con estos conceptos podemos realizar un programa que imprima nuestros datos.
+                    </p>
+                    
+                    <pre>
+                        <code class="language-java">
+public class imprimirDatos {
+
+    public static void main(String[] args) {
+
+        // Variables
+        int edad = 24;
+        String nombre = "Rubén Saiz";
+        boolean estudiante = true;
+        String poblacion = "Alginet";
+        
+        System.out.println("Hola me llamo " + nombre + " y tengo " + edad + "\n" +
+                           ", vivo en " + poblacion);
+
+        // Condicional ternario
+        System.out.println("Estudiante: " + (estudiante) ? "Si" : "No" );
+    }
+
+}
+                        </code>
+                    </pre>
+
+                    <p>
+                        <br /><h1 class="font-weight-light h4">Qué son las estructuras de datos?</h1>
+                        Las estructuras de datos son formas de organizar los datos en un ordenador para que puedan ser utilizados de manera eficiente.
                     </p>
 
-                    <p>Ya casi estamos listos para empezar el curso, qué nos falta te estarás preguntando. Necesitamos ver un video de un auténtico programador de FP para empezar con una buena motivación.</p>
+                    <p>
+                        Existen varios, como pueden ser vectores, mapas, arboles, grafos... Solo me centraré en los arrays. 
+                        Los arrays son como variables que a su vez contienen variables, de esta forma nosotros podemos instanciar un array y poder poder controlar varios valores a diferencia de una variable regular.
+                    </p>
 
-                    <div class="embed-responsive embed-responsive-16by9">
-                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/OgIRAjnnJzI" allowfullscreen></iframe>
-                    </div>
+                    <p>
+                        Podemos crearnos arrays de todos los tipos de datos primitivos.
+                    </p>
+
+                    <pre>
+                        <code class="language-java">
+String[] nombres = {"Rubén", "Paula", "Pepito", "Pepita"};
+int[] numerosPares = {2, 4, 6, 8, 10};
+boolean[] meQuiereNoMeQuiere = {false, true, false, true};
+                        </code>
+                    </pre>
+
+                    <p>
+                        Podemos acceder a las posiciones de los valores de la siguiente forma:
+                    </p>
+
+                    <pre>
+                        <code class="language-java">
+nombres[0];           // Salida -> Ruben
+numerosPares[0]       // Salida -> 2
+meQuiereNoMeQuiere[1] // Salida -> true
+                        </code>
+                    </pre>
+
+                    <p>
+                        Como podemos ver los indices al acceder a los arrays van desde 0 a n-1 siendo n la longitud natural de un array.
+                        <br><br>Podemos recorrer los arrays con estructuras de repetición o bucles. Los bucles no son mas que una estructura que repite el mismo bloque de código las veces que le indiquemos.
+                        <br>Veamos como funciona el bucle for:
+                    </p>
+
+                    <pre>
+                        <code class="language-java">
+/* 
+El bucle for tiene 3 apartados:
+  1.- Inicializacion e instanciacion de una variable.
+  2.- Comparacion hasta donde queremos que pare.
+  3.- Que es lo que va a pasar despues de cada interacion.
+*/
+for(int i = 0; i < 10; i++) {
+    System.out.print( i + " " );
+}
+/* Salida -> 0 1 2 3 4 5 6 7 8 9 */
+                        </code>
+                    </pre>
+
+                    <p>
+                        De esta forma podemos recorrer un array y visualizar su contenido muy facilmente sin necesidad de tener que copiar todos los accesos a los indices.
+                    </p>
+
+                    <pre>
+                        <code class="language-java">
+String[] nombres = {"Pedro", "Juan", "Luis", "Ernestito"};
+/* Como no hay que recorrer arrays */
+System.out.println(nombres[0]);
+System.out.println(nombres[1]);
+System.out.println(nombres[2]);
+System.out.println(nombres[3]);
+
+/* Forma optima de como recorrer arrays */
+for (int i = 0; i < nombres.length; i++) {
+    System.out.println(nombres[i]);
+}
+                        </code>
+                    </pre>
 
                     <nav aria-label="...">
                         <ul class="pagination">
-                            <li class="page-item disabled">
-                                <span class="page-link">Previous</span>
-                            </li>
-                            <li class="page-item active">
-                                <a class="page-link" href="curso-java.html">1</a>
-                                <span class="sr-only">(current)</span>
+                            <li class="page-item">
+                                <a class="page-link" href="curso-java-clase1.html">Atrás</a>
                             </li>
                             <li class="page-item">
-                                <a class="page-link" href="curso-java/curso-java-clase1.html">2</a>
+                                <a class="page-link" href="../curso-java.html">1</a>
                             </li>
-                            <li class="page-item"><a class="page-link" href="curso-java/curso-java-clase2.html">3</a></li>
                             <li class="page-item">
-                            <a class="page-link" href="curso-java/curso-java-clase1.html">Next</a>
+                                <a class="page-link" href="curso-java-clase1.html">2</a>
+                            </li>
+                            <li class="page-item active"><a class="page-link" href="curso-java-clase2.html">3</a></li>
+                            <li class="page-item">
+                            <a class="page-link disabled" href="#">Siguiente</a>
                             </li>
                         </ul>
                     </nav>
