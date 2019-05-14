@@ -6,32 +6,39 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <!-- favicon -->
-    <link rel="icon" type="image/png" href="../../imgs/java-icon.ico">
+    <link rel="icon" type="image/png" href="../../../imgs/java-icon.ico">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
    
     <!-- Estilos principales -->
-    <link rel="stylesheet" href="../../css/estilos-globales.css">
-
+    <link rel="stylesheet" href="../../../css/estilos-globales.css">
+    
     <!-- Estilos pagina cursos -->
-    <link rel="stylesheet" href="../../css/estilos-cursos.css">
+    <link rel="stylesheet" href="../../../css/estilos-cursos.css">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-
-    <title>Curso Maven</title>
+    
+    <!-- CSS prism -->
+    <link rel="stylesheet" href="../../../css/prism.css">
+    
+    <!-- JS prism -->
+    <script src="../../../js/prism.js"></script>
+    
+    <title>Curso Java SE</title>
 
 </head>
 <body>
     
+
     <!-- NAV BAR EMPIEZA -->
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top">
 
         <div class="container">
 
-            <a class="navbar-brand" href="../../index.html">JAVEANDO</a>
+            <a class="navbar-brand" href="../../../index.html">JAVEANDO</a>
             <button onmouseover="over()" onmouseout="out(this)" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fas fa-bars hamburguesa" id="hamburguesa"></i>
                 <script>
@@ -50,7 +57,7 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-lg-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="../../index.html">Inicio <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="../../../index.html">Inicio <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="modal" href="#contact">Contacto</a>
@@ -60,9 +67,9 @@
                             Cursos
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="curso-java.html"><i class="fab fa-java"></i>  Java</a>
-                            <a class="dropdown-item" href="curso-java-fx.html"><i class="fab fa-java"></i>  Java Fx</a>
-                            <a class="dropdown-item" href="curso-maven.html">Maven</a>
+                            <a class="dropdown-item" href="../curso-java.html"><i class="fab fa-java"></i>  Java</a>
+                            <a class="dropdown-item" href="../curso-java-fx.html"><i class="fab fa-java"></i>  Java Fx</a>
+                            <a class="dropdown-item" href="../curso-maven.html">Maven</a>
                         </div>
                     </li>
                 </ul>
@@ -97,42 +104,46 @@
 
             <div class="row">
                 <div class="col-lg-9 col-md-9 col-sm-12">
-                    <h1 class="font-weight-light text-center titulo-bienvenida">Bienvenido al curso de Maven</h1>
-                    <img src="../../imgs/maven.jpg" class="imagenMaven" />
+                    <h1 class="font-weight-light text-center titulo-bienvenida">Creacion de un proyecto Maven</h1>
+
+                    <h1 class="font-weight-light h2">Que es un arquetipo?</h1>
                     <p>
-                            Hola developers, en este curso aprenderemos a utilizar una de las herramientas mas utilizadas en el desarrollo de proyectos en java.
+                        En Maven un “arquetipo” es una plantilla en la que se definirá una estructura de directorios y ficheros.
+                        Creación de un proyecto maven:
+                    </p>
+
+                    <pre class="command-line language-bash" data-user="Ruben>">
+                        <code>
+mvn archetype:create -DgroupId=com.javeando.demoapp -DartifactId=proyectoMaven 
+                        </code>
+                    </pre>
+
+                    <p>
+                      Donde groupId es el identificador único de la organización o grupo que crea el proyecto (se podría decir que es el identificador de la aplicación), y artifactId es el identificador único del artefacto principal de este proyecto (se podría decir que es el identificador del módulo
+                      dentro de la aplicación), es decir, este será el nombre del jar.
                     </p>
 
                     <p>
-                            Maven es una herramienta open Source que se creo en 2001 con el objetivo de simplificar los procesos de compilar y generar ejecutables a partir del código fuente.
-                            Antes de que Maven proporcionara una interfaz común para hacer builds del software, cada proyecto solía tener a alguna persona dedicada exclusivamente a configurar el proceso de build.
-                    </p>
-
-                    <p>
-                            Además, los desarrolladores tenían que perder tiempo en aprender las peculiaridades de cada nuevo proyecto en el que participaban.
-                            Si queríamos compilar y generar ejecutables de un proyecto, teníamos que analizar qué partes de código se debían compilar, qué librerías utilizaba el código, dónde incluirlas, qué dependencias de compilación había en el proyecto…
-                    </p>
-
-                    <p>
-                        Pero ahora utilizando Maven es todo mucho más fácil, es Maven el que se encarga de realizar las dependencias que tiene nuestro proyecto y el automáticamente las descarga. Eso si nosotros le debemos de indicar en un fichero llamado pom.xml el repositorio de ellas.
+                        En el comando no ha hecho falta decir que queremos construir un proyecto java, ya que esta es la opción por defecto.
+                        El resultado de ejecutar este comando es la siguiente estructura de directorios y ficheros:
                     </p>
 
 
+                    
                     <nav aria-label="...">
                         <ul class="pagination">
-                            <li class="page-item disabled">
-                                <span class="page-link">Previous</span>
+                            <li class="page-item">
+                                <a class="page-link" href="../curso-maven.html">Atrás</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="../curso-maven.html">1</a>
                             </li>
                             <li class="page-item active">
-                                <a class="page-link" href="curso-java.html">1</a>
-                                <span class="sr-only">(current)</span>
+                                <a class="page-link" href="curso-maven-clase1.html">2</a>
                             </li>
+                            <li class="page-item"><a class="page-link" href="curso-maven-clase2.html">3</a></li>
                             <li class="page-item">
-                                <a class="page-link" href="curso-maven/curso-maven-clase1.html">2</a>
-                            </li>
-                            <li class="page-item"><a class="page-link" href="curso-maven/curso-maven-clase2.html">3</a></li>
-                            <li class="page-item">
-                            <a class="page-link" href="curso-maven/curso-maven-clase1.html">Next</a>
+                            <a class="page-link" href="curso-maven-clase2.html">Siguiente</a>
                             </li>
                         </ul>
                     </nav>
@@ -140,9 +151,9 @@
                 </div>
                 <div class="col-lg-3  col-md-3 col-sm-12">
                     <div class="list-group">
-                        <a class="list-group-item" href="curso-java.html"> <h4 class="list-group-item-heading">Curso Java Se</h4> <p class="list-group-item-text">Aprender las bases de la programación utilizando el lenguaje mas demandado por las empresas, JAVA!</p> </a>
-                        <a class="list-group-item" href="curso-java-fx.html"> <h4 class="list-group-item-heading">Curso Java Fx</h4> <p class="list-group-item-text">Aprender las librerias de Java Fx para realizar aplicaciones graficas modernas.</p> </a>
-                        <a class="list-group-item active" href="curso-maven.html"> <h4 class="list-group-item-heading">Curso de Maven</h4> <p class="list-group-item-text">Aprender una de las herramientas mas utilizadas para las gestión de proyectos Java en el mercado laboral.</p> </a> 
+                        <a class="list-group-item active" href="../curso-java.html"> <h4 class="list-group-item-heading">Curso Java Se</h4> <p class="list-group-item-text">Aprender las bases de la programación utilizando el lenguaje mas demandado por las empresas, JAVA!</p> </a>
+                        <a class="list-group-item" href="../curso-java-fx.html"> <h4 class="list-group-item-heading">Curso Java Fx</h4> <p class="list-group-item-text">Aprender las librerias de Java Fx para realizar aplicaciones graficas modernas.</p> </a>
+                        <a class="list-group-item" href="../curso-maven.html"> <h4 class="list-group-item-heading">Curso de Maven</h4> <p class="list-group-item-text">Aprender una de las herramientas mas utilizadas para las gestión de proyectos Java en el mercado laboral.</p> </a> 
                     </div>
                 </div>
             </div>
@@ -151,55 +162,6 @@
     </section>
 
     <!-- CONTENT TERMINA -->
-
-    <!-- NAV BAR EMPIEZA -->
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top">
-
-        <div class="container">
-
-            <a class="navbar-brand" href="../../index.html">JAVEANDO</a>
-            <button onmouseover="over()" onmouseout="out(this)" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="fas fa-bars hamburguesa" id="hamburguesa"></i>
-                <script>
-                    /* ESTILOS OVER Y OUT DEL ICONO ham-icon */
-                    function over() {
-                        var icon = document.getElementById('hamburguesa');
-                        icon.style.color = "#000";
-                    }
-                    function out() {
-                        var icon = document.getElementById('hamburguesa');
-                        icon.style.color = "#FFF";
-                    }
-                </script>
-            </button>
-            
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-lg-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="../../index.html">Inicio <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="modal" href="#contact">Contacto</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Cursos
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="curso-java.html"><i class="fab fa-java"></i>  Java</a>
-                            <a class="dropdown-item" href="curso-java-fx.html"><i class="fab fa-java"></i>  Java Fx</a>
-                            <a class="dropdown-item" href="curso-maven.html">Maven</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-
-        </div>
-        
-    </nav>
-    
-    <!-- NAV BAR TERMINA -->
 
 
     <!-- FOOTER EMPIEZA -->
@@ -238,8 +200,8 @@
         </div>
     
         <!-- Copyright -->
-        <div class="footer-copyright py-3">
-            <p class="text-center">© 2018 Copyright: Rubén Saiz Serrano</p>
+        <div class="footer-copyright text-center py-3">
+            © 2018 Copyright: Rubén Saiz Serrano
         </div>
         <!-- Copyright -->
         

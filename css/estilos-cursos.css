@@ -29,3 +29,9 @@
     border-right: none;
     margin-bottom: 20px;
 }
+
+.imagenMaven {
+    width: 100%;
+    height: 30%;
+    margin: auto;
+}
