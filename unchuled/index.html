@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unchuled Game</title>
+    <script type="module" defer src="js/main.js"></script>
+    <style>
+        @import url('css/estilos.css');
+    </style>
+
+    <!-- FONT AWESOME para el boton de mute volume -->
+    <script src="https://kit.fontawesome.com/d8c2640697.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <div id="juego">
+
+        <div class="info">
+            <div class="score">
+                <span>Score</span> <span class="puntos"></span>
+            </div>
+            <div class="vidas">
+                <span>Vidas</span>
+                <div class="contenedor-cajaVidas"></div>
+            </div>
+        </div>
+
+        <div class="tablero"></div>
+
+        <div class="contenedorLeyenda">
+            <div class="contenedorNivel">
+                <span>Nivel</span> <span class="nivel">1</span>
+            </div>
+            <div class="leyenda">
+                <div class="contenedorInventario">
+                    <p class="tituloInventario">Monedas</p>
+                    <p class="contenidoInventario cantidadMonedas">x0</p>
+                    <div class="wrapLeyendaCajas contenedorMonedas">
+                    </div>
+                </div>
+                <div class="contenedorInventario">
+                    <p class="tituloInventario">Urna</p>
+                    <p class="contenidoInventario cantidadUrnas">x0</p>
+                    <div class="wrapLeyendaCajas contenedorUrna">
+                    </div>
+                </div>
+                <div class="contenedorInventario">
+                    <p class="tituloInventario">Llave</p>
+                    <p class="contenidoInventario cantidadLlaves">x0</p>
+                    <div class="wrapLeyendaCajas contenedorLlave">
+                    </div>
+                </div>
+                <div class="contenedorMute">
+                    <button class="btnMute"> 
+                        <i class="fas fa-volume-up"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="gameOver">
+        <h1>GAME OVER</h1>
+        <span>Presiona Enter para seguir jugando...</span>
+    </div>
+
+</body>
+
+</html>

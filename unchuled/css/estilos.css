@@ -1,0 +1,286 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
+
+body {
+    font-family: 'Press Start 2P';
+}
+
+#juego {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: grid;
+    grid-template-areas: "info info"
+                         "tablero leyenda";
+}
+
+.info {
+    grid-area: info;
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 10px;
+}
+
+span {
+    font-size: 30px;
+    color: red;
+    margin-right: 10px;
+}
+
+.puntos {
+    background-color: blue;
+    color: white;
+    padding: 5px;
+    border-radius: 3px; 
+}
+
+.contenedor-cajaVidas {
+    display: flex;
+    justify-content: center;
+    margin-left: 10px;
+    min-width: 200px;
+    min-height: 40px;
+    background-color: black;
+    border-radius: 3px; 
+}
+
+/* Alinear verticalmente la puntuacion */
+.score {
+    display: flex;
+    align-items: center;
+}
+
+.cajaVidas {
+    content: url(../imgs/setaMario.gif);
+    width: 30px;
+    margin: 5px;
+}
+
+.vidas {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.contenedorLeyenda {
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+}
+
+.contenedorNivel {
+    background-color: black;
+    color: red;
+    text-align: center;
+    padding: 10px;
+}
+
+.leyenda {
+    grid-area: leyenda;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 0px 20px 0px 20px;
+    background: url(../imgs/ladrillo.png);
+    height: 100%;
+    width: 200px;
+}
+
+.contenedorInventario {
+    display: flex;
+    flex-direction: column;
+    background-color: black; 
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/* Aplica un margin a todos los hijos de un mismo padre menos al primer hijo */
+.contenedorInventario:nth-child(1n+2) {
+    margin-top: 10px;
+}
+
+.wrapLeyendaCajas {
+    margin-top: 8px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.leyendaCajaMoneda {
+    width: 20px;
+    content: url(../imgs/moneda.gif);
+}
+
+.leyendaCajaLlave {
+    content: url(../imgs/peach.png);
+    width: 20px;
+}
+
+.leyendaCajaUrna {
+    content: url(../imgs/luigi.png);
+    width: 20px;
+}
+
+.leyendaLlave {
+    width: 30px;
+    content: url(../imgs/peach.png);
+}
+
+.tituloInventario {
+    margin: 0;
+    margin-top: 5px;
+    padding: 0;
+    font-size: 15px;
+    color: white;
+}
+
+.contenidoInventario {
+    color: white;
+}
+
+.contenedorMute {
+    display: flex;
+    justify-content: center;
+}
+
+.btnMute {
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 12px 16px;
+    font-size: 16px;
+    cursor: pointer;
+}
+ 
+.btnMute:hover {
+    color: red;
+}
+
+.nada {
+    width: 40px;
+    height: 40px;
+}
+
+.tablero {
+    grid-area: tablero;
+    display: grid;
+    grid-template-columns: repeat(21, 1fr);
+    grid-template-rows: repeat(13, 1fr);
+}
+
+.celda {
+    width: 40px;
+    height: 40px;
+    background-color: black;
+}
+
+.caja {
+    background-image: url(../imgs/cajaMario.png);
+    background-size: 40px 40px;
+    background-color: transparent;
+}
+
+.cajaDescubierta {
+    background-color: red;
+    transition: 1s;
+}
+
+.pisada-derecha {
+    content: url(../imgs/pisada-derecha.png);
+    background-size: 40px 40px;
+}
+
+.pisada-arriba {
+    content: url(../imgs/pisada-arriba.png);
+}
+
+.pisada-izquierda {
+    content: url(../imgs/pisada-izquierda.png);
+}
+
+.pisada-abajo {
+    content: url(../imgs/pisada-abajo.png);
+}
+
+.momia {
+    content: url(../imgs/boo.gif);
+    background-color: black;
+}
+
+.cofre {
+    content: url(../imgs/moneda.gif);
+    transform: translateY(18px);
+    background-color: transparent;
+}
+
+.vacio {
+    content: url(../imgs/ladrillo.png);
+    background-color: transparent;
+}
+
+.sinFondo {
+    background-image: none;
+}
+
+.llave {
+    content: url(../imgs/peach.png);
+    transform: scale3d(1.5, 1.5, 1.5) translateY(10px);
+    background-color: transparent;
+}
+
+.pergamino {
+    content: url(../imgs/flower.png);
+    transform: translateY(18px);
+}
+
+.urna {
+    content: url(../imgs/luigi.png);
+    transform: scale3d(1.5, 1.5, 1.5) translateY(10px);
+}
+
+.gameOver h1 {
+    font-size: 150px;
+}
+
+.gameOver span {
+    color: white;
+}
+
+.gameOver {
+    background-color: rgba(250, 0, 0, 0.60);
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    display: none;
+}
+
+.personaje-standard {
+    content: url(../imgs/mario-standard.png);
+}
+
+.personaje-left {
+    content: url(../imgs/mario_left.png);
+}
+
+.personaje-left2 {
+    content: url(../imgs/mario_left2.png);
+}
+
+.personaje-right {
+    content: url(../imgs/mario_right.png);
+}
+
+.personaje-right2 {
+    content: url(../imgs/mario_right2.png);
+}
+
+.contraste {
+    filter: invert(100%);
+}
